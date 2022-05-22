@@ -19,3 +19,6 @@ docs/build_*
 *.toml
 *.egg
 .flake8
+
+# pipfile
+Pipfile.lock
