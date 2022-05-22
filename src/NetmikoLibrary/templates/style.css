@@ -1,0 +1,41 @@
+pre {
+    display: inline;
+}
+
+h2 {
+    display:inline;
+}
+
+pre code.cli {
+  display: inline;
+  padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: white;
+  font: 0.6rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  }
+
+pre code.python {
+  padding-left: 10px;
+  color: white;
+  font: 0.6rem Inconsolata, monospace;
+  }
+
+figure.cli {
+  border: 1px solid #999;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  padding-left: 10px;
+}
+
+figure.python {
+  border: 1px solid #999;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  padding-left: 10px;
+}

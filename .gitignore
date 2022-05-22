@@ -1,0 +1,21 @@
+# visual studio code
+.vscode/
+
+# test cases may expose private network data
+# sorry
+test/
+
+# python
+build/
+venv/
+virtualenv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+docs/build_*
+.pypirc
+*.log
+*.toml
+*.egg
+.flake8

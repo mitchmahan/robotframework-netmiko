@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+robotframework = "*"
+netmiko = "*"
+ttp = "*"
+
+
+[dev-packages]
+radon = "*"
+flake8 = "*"
+xenon = "*"
+pytest = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
+vcrpy = "*"
+pytest-cov = "*"
+percache = "*"
+jsonpickle = "*"
+twine = "*"
+colorama = "*"
