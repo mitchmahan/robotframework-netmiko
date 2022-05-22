@@ -2,16 +2,15 @@ from os import path
 
 try:
     # Optional Libraies
-    import json
-    import yaml
-    from jinja2 import Environment, FileSystemLoader
     from ttp import ttp
 except ImportError:
     print(
-        "Some functions may not work."
-        "You can install libraries json, yaml, jinj2 for all features."
+        "You can install ttp if you plan to use ttp features."
     )
 
+import json
+import yaml
+from jinja2 import Environment, FileSystemLoader
 from robot.api import logger
 import netmiko
 
