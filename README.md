@@ -12,6 +12,9 @@ pip install robotframework-netmiko
 
 # Examples
 
+More examples can be found in the examples/ folder.
+
+https://github.com/mitchmahan/robotframework-netmiko/tree/main/examples
 
 ## RobotFramework + Netmiko
 
