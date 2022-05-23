@@ -7,6 +7,7 @@ test/
 
 # python
 build/
+dist/
 venv/
 virtualenv/
 __pycache__/

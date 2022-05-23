@@ -10,7 +10,6 @@ Install using your normal pip/pipenv installation method.
 pip install robotframework-netmiko
 ```
 
-# Getting Started
-
-
 # Examples
+
+Please see the examples/ folder for how to get started using this library.

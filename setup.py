@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import os
 from setuptools import setup
 
@@ -36,9 +35,8 @@ setup(
         'jinja2'
     ],
     license=about['__license__'],
-    zip_safe=False,
+    zip_safe=True,
     classifiers=[
-        'Development Status :: 0.1 - Beta',
         'Intended Audience :: Developers',
         'Programming Language :: Python',
     ],
