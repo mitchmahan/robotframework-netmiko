@@ -18,6 +18,10 @@ https://github.com/mitchmahan/robotframework-netmiko/tree/main/examples
 
 ## RobotFramework + Netmiko
 
+### Show Version with output validation
+
+A simple `show version` with validation of the output.
+
 ```robotframework
 
 # show_version.robot
