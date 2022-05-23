@@ -1,17 +1,26 @@
 *** Settings ***
-Documentation       Show Version Example
+Documentation       Show Interfaces with TTP parsing example
 Library             NetmikoLibrary
+Variables           template_cisco.py
 Default Tags        examples
 Suite Setup         Connect to device
 
 
 *** Test Cases ***
-Show Version
-    [Documentation]     Show version example
+Show Interfaces
+    [Documentation]     Show interfaces
     # If connecting to multiple devices you can specify the device.
+    # By default, the last connected device will be used.
     # Change connection   test-device
-    ${cli}=             cli       show version
-    Should contain      ${cli}    Cisco IOS Software
+    ${cli}=             cli ttp      show interfaces    ${interface_template}
+    #[
+    #  {'interface': 'FastEthernet0/0', 'admin_state': 'down', 'protocol_state': 'down'}, 
+    #  {'interface': 'GigabitEthernet0/1', 'admin_state': 'down', 'protocol_state': 'down'},
+    #  ...
+    #]
+    Should be equal     ${cli[0]['interface']}    FastEthernet0/0
+    Should be equal     ${cli[1]['interface']}    GigabitEthernet0/1
+
 
 
 *** Keywords ***

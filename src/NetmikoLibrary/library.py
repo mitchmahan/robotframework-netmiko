@@ -52,6 +52,7 @@ class NetmikoLibrary:
         timeout=120,
         verbose=True,
         session_log=None,
+        port=22
     ):
         """Open a new Netmiko connection and store it in the connection cache
         so we can switch between different netmiko connections.
@@ -81,10 +82,15 @@ class NetmikoLibrary:
             "global_delay_factor": 1,
             "timeout": timeout,
             "session_log": session_log,
+            "port": port
         }
         self.ip = ip
         try:
             self.handler = netmiko.ConnectHandler(**device_profile)
+            
+            # Save the initial prompt for logging
+            self.handler.initial_prompt = self.handler.find_prompt()
+
             index = self.__class__._CONNECTIONS.register(self.handler, alias=alias)
             logger.info("Registered new netmiko connection.")
             logger.info(f"Alias: {alias} Index: {index}")
@@ -243,6 +249,10 @@ class NetmikoLibrary:
         output = self.cli(command, timing=timing)
         _vars = self.parse_ttp_text(output, template)
         self.loghtml.cli_parse(self.ip, command, output, template, _vars)
+        # TTP returns results in a list(list()) format by default - which can be annoying.
+        # Here, we just return the first list if there are no advanced TTP groupings, etc.
+        if len(_vars) == 1:
+            return _vars[0]
         return _vars
 
     def cli_json(self, command: str, timing: bool = False):

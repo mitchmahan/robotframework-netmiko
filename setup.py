@@ -23,9 +23,9 @@ setup(
     url=about['__url__'],
     package_dir={'': 'src'},
     package_data={
-        'NetmikoLib': ['templates/*.*']
+        'NetmikoLibrary': ['templates/*.*']
     },
-    packages=['NetmikoLib'],
+    packages=['NetmikoLibrary'],
     include_package_data=True,
     python_requires=">=3.6",
     install_requires=[
